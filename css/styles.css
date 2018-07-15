@@ -1,0 +1,46 @@
+html, body {
+	height: 100%;
+	background: #D3DBF2;
+	font-family: 'Times New Roman', sans-serif;
+}
+/*********landing page styling begins here*******/
+.landingpage {
+	position: relative;
+  margin: auto;
+  width: 600px;
+  height: 420px;
+	margin-top: 4%;
+  background: linear-gradient(rgba(38, 38, 43, 0.85), rgba(38, 38, 43, 0.95));
+  z-index: 1;
+  -webkit-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+}
+/*********background image*********/
+.right-triangle {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+  width: 50%;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("../images/lpt.jpeg");
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+/*********Landingpage Logo*********/
+.logo img {
+	width: 15%;
+	height: 20%;top: 5%;
+	left: 10%;
+	z-index: 1;
+}
+/*********LandingPage Text*********/
+.presents-text {
+	position: absolute;
+	top: 36%;
+	left: 10%;
+	font-family: "Open Sans Condensed";
+	color: #A19E9F;
+	font-size: 16px;
+	font-weight: 300;
+}
