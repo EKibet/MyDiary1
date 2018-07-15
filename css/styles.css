@@ -104,7 +104,19 @@ html, body {
   color: #ffffff;
   text-transform: none;
 }
-
+#signupForm, #loginForm, #addEntry, #editEntry{
+  display: none;
+  border: 6px solid salmon;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+}
 @media all and (max-width: 600px) {
   .landingpage {
     position: relative;
@@ -154,8 +166,8 @@ html, body {
   padding: 2px;
 }
 
-/*=================================landing page ends=================================*/
-/*=================================Sign up form styling begins=================================*/
+/*==================landing page ends======================================*/
+/*==================Sign up and sign in form styling begins================*/
 
 @media screen and (max-width: 700px) {
   table, tr, td {
@@ -308,7 +320,7 @@ textarea {
   float: left;
   width: 48%;
   margin-right: 4%;
-	
+
 }
 
 .top-row > div:last-child {
@@ -344,4 +356,4 @@ textarea {
   text-align: right;
 }
 
-/*=================================signup form ends=================================*/
+/*=================================signup and sign in form ends=================================*/
