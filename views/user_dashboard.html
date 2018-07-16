@@ -10,16 +10,14 @@
 						<script src="../js/main.js"></script>
 					</head>
 					<body>
-
-            <!--=================================user dashoard starts========================-->
-
+						<!--=================================user dashoard starts========================-->
 						<div class="container">
 							<div class="row mt-5 br-rounded shadow">
 								<div class="column-left bg-secondary">
 									<div class="user__header">
 										<h1 class="user__title">Edgar</h1>
 										<div class="user__add">
-											<i class="-icons">add</i>
+											<button type="button" class="add" name="button">add</button>
 										</div>
 									</div>
 									<div class="user">
@@ -44,6 +42,7 @@
 									<div class="content__header">
 										<h1 class="content__title">My Entries</h1>
 										<span class="">Total Entries:
+
 											<span>5</span>
 										</span>
 									</div>
@@ -53,6 +52,7 @@
 												<i class="-icons">remove</i>
 											</div>
 											<p class="entries__desc">Blockchain
+
 												<span class="entries__details">The chain that has no end.... - 12 July 2018</span>
 											</p>
 											<span>
@@ -66,6 +66,7 @@
 												<i class="-icons">remove</i>
 											</div>
 											<p class="entries__desc">Schedule
+
 												<span class="entries__details">Meet with Sarah... 12 July 2018:10:00AM</span>
 											</p>
 											<span>
@@ -79,6 +80,7 @@
 												<i class="-icons">remove</i>
 											</div>
 											<p class="entries__desc">Secret
+
 												<span class="entries__details">Meet at workplace not hotel... 13 July 2018</span>
 											</p>
 											<span>
@@ -102,21 +104,45 @@
 											<div class="content-left">
 												<p>
           The chain that has no end.
+
 													<br>This tech journaling was inspired by videos and articles,most from Eugene Mutai, Getting to understand blockchain is becoming an interesting process
+
 
 													</p>
 													<a href="#" class="btn-green-flat">Edit</a>
 												</div>
 												<div class="content-right">
 													<p>Entry title:Blockchain
+
 														<br>Date:12/July/2018
+
 															<br>
 																<span class="sponsor-name">Type:Random thougtht</span>
 															</div>
 														</div>
 													</div>
 												</div>
+												<div class="mask"></div>
+												<div class="modal">
+													<h3>Add Entry</h3>
+													<form action="#" method="post">
+														<input placeholder="Title" name="entry-title" type="text" required />
+														<div class="dropdown">
+															<select name="select-entry" id="select-entry">
+																<option class="selected">Entry Type</option>
+																<option>Random thought</option>
+																<option>Schedule</option>
+																<option>Secret Entry</option>
+																<option>Life Updates</option>
+															</select>
+														</div>
+														<input placeholder="desc" name="entity-desc" type="text" required />
+														<input placeholder="Date" name="time_stamp" type="timestamp" required />
+														<input class="formBtn" type="submit" value="Add">
+														</form>
+														<button class="close" >X</button>
+													</div>
+												</div>
 											</div>
-										</div>
-									</body>
-								</html>
+										</body>
+									</html>
