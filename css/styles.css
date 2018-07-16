@@ -309,23 +309,7 @@ textarea {
 
 .field-wrap {
   position: relative;
-  margin-bottom: 40px;
-}
-
-.top-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.top-row > div {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
-}
-
-.top-row > div:last-child {
-  margin: 0;
+  margin-bottom: 20px;
 }
 
 .button {
@@ -575,7 +559,6 @@ textarea {
 .block {
   display: block;
 }
-
 
 .btn-green-flat-trigger {
   border: 1px solid #47ba6b;
@@ -875,7 +858,8 @@ textarea {
   opacity: 1;
   transform: translateY(0);
 }
-input, textarea , select{
+
+input, textarea , select {
   margin: .8em auto;
   font-family: inherit;
   text-transform: inherit;
@@ -884,12 +868,92 @@ input, textarea , select{
   width: 280px;
   padding: .4em;
 }
-.add{
-  padding:10px 30px;
-outline: none;
-background-color: #27ae60;
-border: none;
-border-radius:5px;
-box-shadow: 0 9px #95a5a6;
+
+.add {
+  padding: 10px 30px;
+  outline: none;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px #95a5a6;
+  width: 100px;
+  margin-top: 40px;
+  cursor: pointer;
+  border-left: 4px solid #739cda;
+  font-size: 0.7em;
+  color: #656565;
+  font-weight: normal;
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
 }
 /*====================landing page styling ends here============================*/
+
+/* user menu settings */
+#dropdown {
+  display: block;
+  padding: 5px 8px;
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  border-left: 4px solid #739cda;
+  background: #fff;
+  font-size: 0.7em;
+  color: #656565;
+  font-weight: normal;
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+#dropdown:hover {
+  color: #898989;
+}
+
+#dropdown.open {
+  background: #5a90e0;
+  color: #fff;
+  border-left-color: #6c6d70;
+}
+
+#dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: -4px;
+ /* move content -4px because of container left border */
+  width: 250px;
+  padding: 5px 0px;
+  display: none;
+  border-left: 4px solid #8e9196;
+  background: #fff;
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#dropdown ul li {
+  font-size: 0.9em;
+}
+
+#dropdown ul li a {
+  text-decoration: none;
+  display: block;
+  color: #447dd3;
+  padding: 7px 15px;
+}
+
+#dropdown ul li a:hover {
+  color: #6fa0e9;
+  background: #e7f0f7;
+}
