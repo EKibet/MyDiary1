@@ -41,5 +41,19 @@ jQuery(document).ready(function($) {
   $(target).fadeIn(600);
 
  });
+ var contentModal = $('.content-modal');
+$( "#view" ).on( "click", function(e) {
+ e.preventDefault();
+ $( contentModal ).toggleClass('content-modal-show');
+});
+$( ".overlay" ).on( "click", function() {
+ $( contentModal ).toggleClass('content-modal-show');
+});
+$( ".content-modal_close" ).on( "click", function() {
+ $( contentModal ).toggleClass('content-modal-show');
+});
+$(".mobile-close").on("click", function(){
+ $( contentModal ).toggleClass('content-modal-show');
+});
 
 });
