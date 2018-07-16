@@ -42,35 +42,46 @@ jQuery(document).ready(function($) {
 
  });
  var contentModal = $('.content-modal');
-$( "#view" ).on( "click", function(e) {
- e.preventDefault();
- $( contentModal ).toggleClass('content-modal-show');
-});
-$( ".overlay" ).on( "click", function() {
- $( contentModal ).toggleClass('content-modal-show');
-});
-$( ".content-modal_close" ).on( "click", function() {
- $( contentModal ).toggleClass('content-modal-show');
-});
-$(".mobile-close").on("click", function(){
- $( contentModal ).toggleClass('content-modal-show');
-});
-$(".add").on("click", function(){
+ $("#view").on("click", function(e) {
+  e.preventDefault();
+  $(contentModal).toggleClass('content-modal-show');
+ });
+ $(".overlay").on("click", function() {
+  $(contentModal).toggleClass('content-modal-show');
+ });
+ $(".content-modal_close").on("click", function() {
+  $(contentModal).toggleClass('content-modal-show');
+ });
+ $(".mobile-close").on("click", function() {
+  $(contentModal).toggleClass('content-modal-show');
+ });
+ $(".add").on("click", function() {
   $(".mask").addClass("active");
-});
+ });
 
 
-function closeModal(){
+ function closeModal() {
   $(".mask").removeClass("active");
-}
+ }
 
-$(".close, .mask").on("click", function(){
+ $(".close, .mask").on("click", function() {
   closeModal();
-});
+ });
 
-$(document).keyup(function(e) {
+ $(document).keyup(function(e) {
   if (e.keyCode == 27) {
-    closeModal();
+   closeModal();
   }
-});
+ });
+ $("#dropdown").on("click", function(e) {
+  e.preventDefault();
+
+  if ($(this).hasClass("open")) {
+   $(this).removeClass("open");
+   $(this).children("ul").slideUp("fast");
+  } else {
+   $(this).addClass("open");
+   $(this).children("ul").slideDown("fast");
+  }
+ });
 });

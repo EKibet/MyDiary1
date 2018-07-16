@@ -313,8 +313,6 @@ textarea {
   margin-bottom: 40px;
 }
 
-
-
 .button {
   border: 0;
   outline: none;
@@ -861,7 +859,8 @@ textarea {
   opacity: 1;
   transform: translateY(0);
 }
-input, textarea , select{
+
+input, textarea , select {
   margin: .8em auto;
   font-family: inherit;
   text-transform: inherit;
@@ -894,6 +893,8 @@ input, textarea , select{
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
+/*====================landing page styling ends here============================*/
+
 /*====================landing page styling ends here============================*/
 
 /* user menu settings */
@@ -959,4 +960,3 @@ input, textarea , select{
   color: #6fa0e9;
   background: #e7f0f7;
 }
-/*====================landing page styling ends here============================*/
