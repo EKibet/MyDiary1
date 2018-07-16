@@ -374,6 +374,8 @@ textarea {
 
 /*=================================signup and sign in form ends=================================*/
 
+/*====================User dashboard styling begins here============================*/
+
 .row {
   display: flex;
   flex-direction: row;
@@ -574,12 +576,6 @@ textarea {
   display: block;
 }
 
-.credit {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  left: 0;
-}
 
 .btn-green-flat-trigger {
   border: 1px solid #47ba6b;
@@ -896,3 +892,4 @@ border: none;
 border-radius:5px;
 box-shadow: 0 9px #95a5a6;
 }
+/*====================landing page styling ends here============================*/
