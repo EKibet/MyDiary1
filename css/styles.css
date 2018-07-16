@@ -310,7 +310,10 @@ textarea {
 .field-wrap {
   position: relative;
   margin-bottom: 20px;
+  margin-bottom: 40px;
 }
+
+
 
 .button {
   border: 0;
@@ -858,8 +861,7 @@ textarea {
   opacity: 1;
   transform: translateY(0);
 }
-
-input, textarea , select {
+input, textarea , select{
   margin: .8em auto;
   font-family: inherit;
   text-transform: inherit;
@@ -957,3 +959,4 @@ input, textarea , select {
   color: #6fa0e9;
   background: #e7f0f7;
 }
+/*====================landing page styling ends here============================*/
