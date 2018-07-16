@@ -879,3 +879,20 @@ textarea {
   opacity: 1;
   transform: translateY(0);
 }
+input, textarea , select{
+  margin: .8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  display: block;
+  width: 280px;
+  padding: .4em;
+}
+.add{
+  padding:10px 30px;
+outline: none;
+background-color: #27ae60;
+border: none;
+border-radius:5px;
+box-shadow: 0 9px #95a5a6;
+}
