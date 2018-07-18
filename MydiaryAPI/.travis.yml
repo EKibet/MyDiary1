@@ -1,0 +1,13 @@
+language: python3
+branches:
+  only:
+    - develop-api-endpoints
+matrix:
+  include:
+    - os: osx
+install:
+- pip install -r requirements.txt
+deploy:
+  provider: heroku
+  app: app.py
+test: on
