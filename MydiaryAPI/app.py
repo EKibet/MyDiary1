@@ -13,4 +13,4 @@ class DiaryAPI(Resource):
         pass
     def post(self, id):
         pass
-api.add_resource(DiaryAPI, '/entries', endpoint = 'user')
+api.add_resource(DiaryAPI, '/entries', endpoint = 'entry')
