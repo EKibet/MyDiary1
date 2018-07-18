@@ -75,8 +75,18 @@ class entryListAPI(Resource):
             }
         entries.append(entry)
         return ({'entry': marshal(entry, entry_fields)}, 201)
+    def post(self):
+        args = self.reqparse.parse_args()
+        entry = {
+            'id': entries[-1]['id'] + 1,
+            'title': args['title'],
+            'description': args['description'],
+            'done': False,
+            }
+        entries.append(entry)
+        return ({'entry': marshal(entry, entry_fields)}, 201)
 
-''' retrieves single entry'''
+'''retrieves single entry.'''
 class entryAPI(Resource):
 
     decorators = [auth.login_required]
@@ -95,7 +105,16 @@ class entryAPI(Resource):
             abort(404)
         return {'entry': marshal(entry[0], entry_fields)}
 
-
+    def post(self):
+        args = self.reqparse.parse_args()
+        entry = {
+            'id': entries[-1]['id'] + 1,
+            'title': args['title'],
+            'description': args['description'],
+            'done': False,
+            }
+        entries.append(entry)
+        return ({'entry': marshal(entry, entry_fields)}, 201)
 
 api.add_resource(entryListAPI, '/diary/api/v1.0/entries',
                  endpoint='entries')
