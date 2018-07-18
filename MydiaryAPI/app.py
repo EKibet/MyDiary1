@@ -1,8 +1,23 @@
-from flask import Flask
+from flask import Flask, jsonify, abort, request, url_for ,make_response
 from flask_restful import Api, Resource
 
 app = Flask(__name__)
 api = Api(app)
+
+entries = [
+    {
+        'id': 1,
+        'title': u'Blockchain',
+        'description': u'The chain tha has no end.',
+        'date': '10/06/2018'
+    },
+    {
+        'id': 2,
+        'title': u'Schedule',
+        'description': u'Meet with team members to know how we are progressing',
+        'date': '10/06/2018'
+    }
+]
 
 class EntryListAPI(Resource):
     def get(self, id):
