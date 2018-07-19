@@ -78,7 +78,7 @@ class EntryAPI(Resource):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('title', type=str, location='json')
         self.reqparse.add_argument('description', type=str, location='json')
-        self.reqparse.add_argument('date', ype=str, location='json')
+        self.reqparse.add_argument('date', type=str, location='json')
         super(EntryAPI, self).__init__()
 
     def get(self, id):
@@ -86,3 +86,14 @@ class EntryAPI(Resource):
         if len(entry) == 0:
             abort(404)
         return {'entry': marshal(entry[0], entry_fields)}
+
+    def put(self, id):
+        entry = [entry for entry in entries if entry['id'] == id]
+        if len(entry) == 0:
+            abort(404)
+        entry = entry[0]
+        args = self.reqparse.parse_args()
+        for k, v in args.items():
+            if v is not None:
+                entry[k] = v
+        return {'entry': marshal(entry, entry_fields)}
