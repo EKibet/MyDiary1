@@ -1,11 +1,3 @@
-language: python3
-branches:
-  only:
-    - develop-api-endpoints
-matrix:
-  include:
-    - os: osx
-install:
-deploy:
-  app: app.py
-test: on
+Flask_RESTful==0.3.5
+Flask==0.12.1
+flask_httpauth==3.2.4
