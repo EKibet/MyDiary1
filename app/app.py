@@ -93,7 +93,14 @@ class EntryAPI(Resource):
             abort(404)
         entry = entry[0]
         args = self.reqparse.parse_args()
-        for k, v in args.items():
-            if v is not None:
-                entry[k] = v
+        for i, x in args.items():
+            if x is not None:
+                entry[i] = x
         return {'entry': marshal(entry, entry_fields)}
+
+    def delete(self, id):
+        entry = [entry for entry in entries if entry['id'] == id]
+        if len(entry) == 0:
+            abort(404)
+        entries.remove(entry[0])
+        return {'result': True}
