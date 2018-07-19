@@ -44,7 +44,7 @@ entries = [{
 entry_fields = {
     'title': fields.String,
     'description': fields.String,
-    'done': fields.String,
+    'date': fields.String,
     'uri': fields.Url('entry'),
     }
 
@@ -71,17 +71,7 @@ class entryListAPI(Resource):
             'id': entries[-1]['id'] + 1,
             'title': args['title'],
             'description': args['description'],
-            'done': False,
-            }
-        entries.append(entry)
-        return ({'entry': marshal(entry, entry_fields)}, 201)
-    def post(self):
-        args = self.reqparse.parse_args()
-        entry = {
-            'id': entries[-1]['id'] + 1,
-            'title': args['title'],
-            'description': args['description'],
-            'done': False,
+            'date': args['date'],
             }
         entries.append(entry)
         return ({'entry': marshal(entry, entry_fields)}, 201)
@@ -105,13 +95,24 @@ class entryAPI(Resource):
             abort(404)
         return {'entry': marshal(entry[0], entry_fields)}
 
+    def put(self, id):
+        entry = [entry for entry in entries if entry['id'] == id]
+        if len(entry) == 0:
+            abort(404)
+        entry = entry[0]
+        args = self.reqparse.parse_args()
+        for (k, v) in args.items():
+            if v is not None:
+                entry[k] = v
+        return {'entry': marshal(entry, entry_fields)}
+
     def post(self):
         args = self.reqparse.parse_args()
         entry = {
             'id': entries[-1]['id'] + 1,
             'title': args['title'],
             'description': args['description'],
-            'done': False,
+            'date': args['date'],
             }
         entries.append(entry)
         return ({'entry': marshal(entry, entry_fields)}, 201)
