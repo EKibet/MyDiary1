@@ -39,7 +39,7 @@ entries = [
 entry_fields = {
     'title': fields.String,
     'description': fields.String,
-    'done': fields.String,
+    'date': fields.String,
     'uri': fields.Url('entry')
 }
 
@@ -59,6 +59,16 @@ class Entries_API(Resource):
     def get(self):
         return {'entries': [marshal(entry, entry_fields) for entry in entries]}
 
+    def post(self):
+        args = self.reqparse.parse_args()
+        entry = {
+            'id': entries[-1]['id'] + 1,
+            'title': args['title'],
+            'description': args['description'],
+            'date': args['date']
+        }
+        entries.append(entry)
+        return {'entry': marshal(entry, entry_fields)}, 201
 
 
 class EntryAPI(Resource):
@@ -69,7 +79,7 @@ class EntryAPI(Resource):
         self.reqparse.add_argument('title', type=str, location='json')
         self.reqparse.add_argument('description', type=str, location='json')
         self.reqparse.add_argument('date', ype=str, location='json')
-        super(entryAPI, self).__init__()
+        super(EntryAPI, self).__init__()
 
     def get(self, id):
         entry = [entry for entry in entries if entry['id'] == id]
