@@ -1,4 +1,4 @@
-sudo: false  # https://docs.travis-ci.com/user/ci-environment/
+sudo: true  # https://docs.travis-ci.com/user/ci-environment/
 language: python3
 
 install:
