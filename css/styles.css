@@ -310,6 +310,7 @@ textarea {
 .field-wrap {
   position: relative;
   margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .button {
@@ -892,6 +893,8 @@ input, textarea , select {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
+/*====================landing page styling ends here============================*/
+
 /*====================landing page styling ends here============================*/
 
 /* user menu settings */
