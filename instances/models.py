@@ -1,6 +1,6 @@
 """Data retrival and manipulation goes here"""
-from flask_restplus import Resource, Namespace, fields, reqparse, DateTime, marshal
-from instances.resource import entries_collection
+from flask_restplus import Resource, Namespace, fields, reqparse
+from instances.resource import entries_collection, EntryList
 from flask import request
 
 
@@ -16,8 +16,7 @@ entry_model = entry_namespace.model(
 
 @entry_namespace.route("/entries")
 @entry_namespace.doc(responses={201: "Entry added successfully"})
-class UserEntry(Resource):
-
+class EntryMethods(Resource):
 
     '''Gets all entries'''
 
@@ -26,11 +25,13 @@ class UserEntry(Resource):
         """Handle get request of url /entries"""
 
         return entries_collection
-    @entry_namespace.epect(entry_model)
+    @entry_namespace.expect(entry_model)
     def post(self):
-        '''Creates New Entry'''
-        args = self.reqparse.parse_args()
-        entries_collection.append(entry_model)
-        return {'entry_model': marshal(entry_model, entry_namespace)}, 201
-ffffffffffffffffffffff
-ffffffffffff
+        '''Creates New Entry
+        Parses the incoming JSON request data and returns it.'''
+        post = request.get_json()
+        description = post["Description"]
+        date = post['date_created']
+        new_entry = EntryList(description,date)
+        new_entry.create()
+        return {"status_code": "Entry Added successfully"}, 201
