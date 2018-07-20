@@ -1,8 +1,8 @@
-sudo: true  # https://docs.travis-ci.com/user/ci-environment/
+sudo: required  # https://docs.travis-ci.com/user/ci-environment/
 language: python3
 
 install:
-  - pip install --user requirements.txt
+  - python pip install --user requirements.txt
   - pip install coveralls
 script: make ci
 after_success: coveralls
