@@ -2,6 +2,7 @@ sudo: false  # https://docs.travis-ci.com/user/ci-environment/
 language: python3
 
 install:
+  -easy_install-2.6 readline ipython
   - pip install -r requirements.txt
   - pip install coveralls
 script: make ci
