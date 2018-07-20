@@ -2,7 +2,7 @@
 
 from flask_restplus import Resource, Namespace, fields, reqparse
 from instances.resources import entries_collection, EntryList
-from flask import Flask
+from flask import Flask,request, abort
 
 ''' field attributes goes here'''
 
@@ -23,3 +23,21 @@ class EntryMethods(Resource):
     def get(self):
         """Handle get request of url /entries"""
         return entries_collection
+
+
+
+''''Get a single/specific entry'''
+@entry_namespace.route('/entries/<int:id>')
+@entry_namespace.doc(responses = {
+        201: "Entry successfully created",
+        400: "Invalid parameters provided",
+        404: "Entry not found"
+        }
+        )
+class GetOne(Resource):
+    def get(self,id):
+        single = [entry for entry in entries_collection if entry["id"] == id
+        ]
+        if len(single) == 0:
+            abort(404)
+        return single[0]
