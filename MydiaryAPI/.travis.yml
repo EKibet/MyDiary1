@@ -5,6 +5,7 @@ branches:
 matrix:
   include:
     - os: osx
+unset -f cd
 install:
 - pip install -r requirements.txt
 deploy:
