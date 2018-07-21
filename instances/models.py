@@ -1,8 +1,8 @@
 """Data retrival and manipulation goes here"""
 
 from flask_restplus import Resource, Namespace, fields, reqparse
-from instances.resources import entries_collection, EntryList
-from flask import Flask,request, abort
+from instances.resource import entries_collection, EntryList
+from flask import Flask,request, abort, json
 
 ''' field attributes goes here'''
 
@@ -50,3 +50,12 @@ def post(self):
     user_entry = EntryList(date, entry)
     user_entry.create()
     return {"status": "Entry added successfully"}, 201
+
+
+    def test_api_post_entries(self):
+        """Test POST request Method"""
+        response = self.client.post(
+            '/mydiary/api/v1.0',
+            data=json.dumps(self.data),
+            content_type="application/json")
+        self.assertEqual(response.status_code, 201)

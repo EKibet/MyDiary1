@@ -1,5 +1,5 @@
-"""RESTful server implemented using the
-Flask-RESTful extension."""
+"""RESTplus server implemented using the
+Flask-RESTplus extension(using data structures)."""
 
 import os
 from app.app import create_app
