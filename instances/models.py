@@ -42,8 +42,8 @@ class GetOne(Resource):
             abort(404)
         return single[0]
 
-@entries_namespace.route('/entries/<int:contentID>')
-@entries_namespace.doc(
+@entry_namespace.route('/entries/<int:contentID>')
+@entry_namespace.doc(
     responses={201: "Entry successfully updated",
         400: "Invalid parameters provided",
         404: "Entry not found"
