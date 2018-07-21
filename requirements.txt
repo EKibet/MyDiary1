@@ -1,6 +1,6 @@
 pycrypto==2.6.1
 Cython==0.28.4
-ipython==6.4.0
+ipython==5.7.0
 pyOpenSSL==18.0.0
 argcomplete==1.9.4
 blinker==1.4
