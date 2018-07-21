@@ -41,3 +41,12 @@ class GetOne(Resource):
         if len(single) == 0:
             abort(404)
         return single[0]
+@entry_namespace.expect(entry_model)
+def post(self):
+    """Handle post request of url/entries"""
+    post = request.get_json()
+    date = post["Date"]
+    entry = post["Content"]
+    user_entry = EntryList(date, entry)
+    user_entry.create()
+    return {"status": "Entry added successfully"}, 201
