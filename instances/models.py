@@ -41,6 +41,25 @@ class GetOne(Resource):
         if len(single) == 0:
             abort(404)
         return single[0]
+
+@entries_namespace.route('/entries/<int:contentID>')
+@entries_namespace.doc(
+    responses={201: "Entry successfully updated",
+        400: "Invalid parameters provided",
+        404: "Entry not found"
+    })
+class UpdateEntry(Resource):
+    """Handle PUT request"""
+
+    def get(self, contentID):
+        edit = [
+            entry for entry in entries_collection
+            if entry["id"] == id
+        ]
+        if len(edit) == 0:
+            abort(404)
+        return edit
+
 @entry_namespace.expect(entry_model)
 def post(self):
     """Handle post request of url/entries"""
